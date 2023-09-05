@@ -11,6 +11,8 @@
 ssh -T git@github.com  # 检查密钥是否连通
 git init  # 初始化git管理项目
 ```
+![image](https://github.com/YRH0/book/assets/74707759/e26baff4-f546-45ea-91af-3baf4115fd2d)
+
 # 提交代码
 ```powershell
 git add.
