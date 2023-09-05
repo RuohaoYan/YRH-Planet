@@ -38,34 +38,28 @@ IdentityFile ~/.ssh/id_rsa_git_bit_3090_4.pub
 ```
 5、重复1、，判断是否连接成功
 
-### 初始化项目
+### 初始化git操作
 ```powershell
-git clone 项目地址
+git clone https://github.com/xxxxx
+git clone 项目地址 # 克隆git项目
+git clone -b thresCal git@github.com:xxxxx
+git clone -b 分支名 分支仓库地址 # clone指定分支
 git init
 ```
 
 ### 提交代码
 ```powershell
-git add.
-# 将目录下的文件全部添加到缓存区
-git commit -m 提交信息 
-# 提交信息指修改表示，便于后期分辨
+git add.  # 将目录下的文件全部添加到缓存区
+git commit -m 提交信息  # 提交信息指修改表示，便于后期分辨
 git push
 git pull origin master --allow-unrelated-histories # 允许不相关历史提交，--allow-unrelated-histories强制合并
 git push --force origin master # 强制提交
 ```
-# 初始化git操作
-```powershell
-git clone https://github.com/xxxxx
-git clone 项目地址
-# 克隆git项目
-git clone -b thresCal git@github.com:xxxxx
-git clone -b 分支名 分支仓库地址
-# clone指定分支
-```
-# 操作远程仓库
+
+### 操作远程仓库
 ```powershell
 git remote # 查看有哪些远程仓库
+git remote -v / git remote show origin # 查看仓库地址
 git remote remove origin # 删除远程仓库
 git remote add origin xxx # 增加远程仓库xxx(链接)命名为origin
 git push --set-upstream origin master # 关联本地分支与远程分支 origin指向远程仓库标签 master 远程仓库分支
