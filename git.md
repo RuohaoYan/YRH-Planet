@@ -64,7 +64,6 @@ git remote remove origin # 删除远程仓库
 git remote add origin xxx # 增加远程仓库xxx(链接)命名为origin
 git push --set-upstream origin master # 关联本地分支与远程分支 origin指向远程仓库标签 master 远程仓库分支
 git push -u origin master # 把本地仓库push到github上master分支
-git remote -v # 查看远程仓库详细信息，可以看到仓库名称
 git remote remove orign # 删除orign仓库
 ```
 
