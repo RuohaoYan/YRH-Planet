@@ -1,19 +1,50 @@
-
 # 云存储
+## 网盘
 ## github
-本地仓库区：本地仓库是指存储在本地**计算机上的Git版本库**。它包含了完整的项目历史记录和元数据信息，可以在本地仓库中进行提交、分支操作和版本控制。（
-工作区（Working Directory）：工作区是当前在电脑上进行编辑和修改的目录，它包含实际的项目文件和文件夹。
-暂存区（Staging Area/Index）：也称为索引，在工作区中修改文件后，可以使用git add命令将更改添加到暂存区。暂存区相当于一个缓冲区，用于暂时存放将要提交的更改。
-版本库（Repository）：通常位于项目目录中的.git文件夹中。包括了暂存区、分支、提交记录、标签等信息。通过版本库，可以查看历史记录、回滚更改、创建分支等操作。）
-远程仓库：位于网络上的Git仓库，通常托管在代码托管服务（如GitHub、GitLab、Bitbucket等）或自己搭建的Git服务器上。远程仓库用于团队协作、代码共享和备份。可以将本地的Git仓库与远程仓库进行同步，通过git push命令将本地的提交推送到远程仓库，或使用git pull命令将远程仓库的更新拉取到本地。
+**本地仓库区**：指存储在本地计算机上的Git版本库，包含了完整的项目历史记录和元数据信息，可以在本地仓库中进行提交、分支操作和版本控制。
+{**工作区（Working Directory）**：包含实际的项目文件，在电脑上进行编辑和修改。
+**暂存区（Staging Area/Index）**：暂存区相当于一个缓冲区，用于暂时存放将要提交的更改，在工作区中修改文件后，可以使用git add命令将更改添加到暂存区。
+**版本库（Repository）**：包含了项目的完整历史记录和元数据，通常位于项目目录中的.git文件夹中，包括了暂存区、分支、提交记录、标签等信息，通过版本库，您可以查看历史记录、回滚更改、创建分支等操作。}
+电脑上的工作目录
+**远程仓库**：云端
 
+### ssh配置
+1、检查密钥是否连通，否进入2、，
 ```python
-ssh -T git@github.com  # 检查密钥是否连通
-git init  # 初始化git管理项目
+ssh -T git@github.com 
 ```
-![image](https://github.com/YRH0/book/assets/74707759/e26baff4-f546-45ea-91af-3baf4115fd2d)
+2、生成密钥
+-f 参数表示指定密钥对生成位置与名称
+密钥对通常放在 ~/.ssh 目录下
+回车即可创建密钥对，需要输入密码如果不需要为密钥对进行加密，那么可以一路回车。
+```shell
+ssh-keygen -f ~/.ssh/id_rsa_xj_3090_2 -t rsa -C 邮箱
+```
+3、在github中加入公钥（.pub文件）
+点击图像，选择setting，选择SSH and GPG keys，增加new ssh keys
+```shell
+cat .pub # 剪切公钥的内容并复制粘贴到new ssh keys中
+```
+4、配置ssh config文件，目的是使计算机在运行ssh服务连接github的时候知道应该使用哪个密钥
+```python
+cd ~/.ssh # 进入ssh目录
+vi config
+```
+```shell
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_git_bit_3090_4.pub
+```
+5、重复1、，判断是否连接成功
 
-# 提交代码
+### 初始化项目
+```powershell
+git clone 项目地址
+git init
+```
+
+### 提交代码
 ```powershell
 git add.
 # 将目录下的文件全部添加到缓存区
@@ -151,6 +182,4 @@ ssh-agent bash
 ssh -T git@github.com 
 ```
 不行就重新生成ssh key，https://blog.csdn.net/qq_36372569?type=blog
-
 ## huggingface
-## 云盘
