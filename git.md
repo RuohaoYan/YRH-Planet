@@ -17,6 +17,7 @@ ssh -T git@github.com
 -f 参数表示指定密钥对生成位置与名称
 密钥对通常放在 ~/.ssh 目录下
 回车即可创建密钥对，需要输入密码如果不需要为密钥对进行加密，那么可以一路回车。
+**邮箱与git邮箱要一致，github会验证邮箱**
 ```shell
 ssh-keygen -f ~/.ssh/id_rsa_xj_3090_2 -t rsa -C 邮箱
 ```
@@ -33,8 +34,8 @@ vi config
 ```shell
 Host github.com
 HostName github.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/id_rsa_git_bit_3090_4.pub
+PreferredAuthentications publickey # 指定首选的身份验证方法。在这种情况下，设置为 "publickey"，表示将使用SSH公钥身份验证。
+IdentityFile ~/.ssh/id_rsa_git_bit_3090_4.pub # **如果出现密钥权限问题 去掉这一行**
 ```
 5、重复1、，判断是否连接成功
 
