@@ -72,7 +72,7 @@ git remote remove orign # 删除orign仓库
 git submodule add ...(仓库B的地址，即git clone时后面那串东西)
 ```
 
-# 获取远程仓库最新代码
+### 获取远程仓库最新代码
 ```powershell
 方法①
 git pull origin master:brantest
@@ -90,7 +90,7 @@ git pull 与 git fetch + get merge 的区别 :
 		**不要用git pull，用git fetch和git merge代替它。**
 git pull的问题是它把过程的细节都隐藏了起来，以至于你不用去了解git中各种类型分支的区别和使用方法。当然，多数时候这是没问题的，但一旦代码有问题，你很难找到出错的地方。看起来git pull的用法会使你吃惊，简单看一下git的使用文档应该就能说服你。
 		将下载（fetch）和合并（merge）放到一个命令里的另外一个弊端是，你的本地工作目录在未经确认的情况下就会被远程分支更新。当然，除非你关闭所有的安全选项，否则git pull在你本地工作目录还不至于造成不可挽回的损失，但很多时候我们宁愿做的慢一些，也不愿意返工重来。
-# 分支操作
+### 分支操作
 ```powershell
 git branch -r
 # 查看远程分支
@@ -109,7 +109,7 @@ git checkout [branch name]
 git push origin [branch name]
 # 推送新分支到github
 ```
-# 缓冲区文件操作
+### 缓冲区文件操作
 ```powershell
 git ls-files 
 # 该命令输出在缓冲区中缓存的所有文件
@@ -124,7 +124,7 @@ git clean -fd
 git clean -xfd 
 # 连 gitignore 的untrack 文件/目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）
 ```
-# 忽略提交数据
+### 忽略提交数据
 ```powershell
 # 创建.gitingore文件
 vi .gitingore
@@ -160,7 +160,7 @@ a/**/b: 忽略a/b, a/x/b, a/x/y/b等
 *.log: 忽略所有 .log 文件
 config.php: 忽略当前路径的 config.php 文件
 ```
-# 遇到的问题
+### 遇到的问题
  1. push时修改暂存区没用？
 copy时将.git文件也copy过来了，删除就好
  2. fatal: Not a git repository?
