@@ -67,6 +67,12 @@ git push -u origin master # 把本地仓库push到github上master分支
 git remote -v # 查看远程仓库详细信息，可以看到仓库名称
 git remote remove orign # 删除orign仓库
 ```
+
+### 子仓库
+```powershell
+git submodule add ...(仓库B的地址，即git clone时后面那串东西)
+```
+
 # 获取远程仓库最新代码
 ```powershell
 方法①
