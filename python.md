@@ -17,6 +17,11 @@ name = "Alice"
 age = 25
 print("My name is %s and I am %d years old." % (name, age))  # 使用 % 进行格式化
 # My name is Alice and I am 25 years old.
+data_i = "a"
+name1 = "11"
+text = "{%s}:{%s}" %(data_i,name1)
+print(text)
+# {a}:{11}
 print("My name is {} and I am {} years old.".format(name, age))  # 使用 format() 方法进行格式化
 # My name is Alice and I am 25 years old.
 print(f"My name is {name} and I am {age} years old.")  # 使用 f-string 
