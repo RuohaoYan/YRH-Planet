@@ -1,4 +1,5 @@
 # 基础语法
+## 参数
 ```python
 def test(*arg,**args):
     print(arg)
@@ -9,6 +10,36 @@ test(1,2,a=5,b=6)
 # (1, 2)
 # ------------------------
 # {'a': 5, 'b': 6}
+```
+## 输出
+```python
+name = "Alice"
+age = 25
+print("My name is %s and I am %d years old." % (name, age))  # 使用 % 进行格式化
+# My name is Alice and I am 25 years old.
+print("My name is {} and I am {} years old.".format(name, age))  # 使用 format() 方法进行格式化
+# My name is Alice and I am 25 years old.
+print(f"My name is {name} and I am {age} years old.")  # 使用 f-string 
+# My name is Alice and I am 25 years old.
+# \n \t \\ \' \" \r \b \v 
+print("Hello,\nWorld!")
+# Hello,
+# World!
+print("Name:\tAlice")
+# Name:   Alice
+print("This is a backslash: \\")
+# This is a backslash: \
+print("He said, \"Hello!\"")
+# He said, "Hello!"
+print('She\'s happy.')
+# She's happy.
+print("Hello\rWorld!")  # 输出后将光标移至行首
+# World!
+print("Hello\bWorld!")  # 输出后删除前一个字符
+# HellWorld!
+print("Hello\vWorld!")  # 输出后垂直制表符
+# Hello
+#      World!
 ```
 
 # IDE使用
