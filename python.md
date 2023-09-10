@@ -46,6 +46,24 @@ print("Hello\vWorld!")  # 输出后垂直制表符
 # Hello
 #      World!
 ```
+## 路径
+### sys
+#### sys.path
+python在模块导入过程中，解释器会使用sys.path变量来确定模块的搜索路径，包括当前工作目录、python安装目录
+![image](https://github.com/YRH0/book/assets/74707759/b7c9b8db-8734-4ebd-a24c-dbd56d90d90d)
+### os
+#### os.environ
+##### os.environ['PATH']
+指定了可执行文件的搜索路径
+#### os.getcwd()
+获取的是工作目录的路径，调试时运行
+```python
+(/data1/conda_env/yrh_mtwxb) root@bit:/data1/yrh/trans/wxb_mechine_translation_nj# python machine_translation/test.py
+/data1/yrh/trans/wxb_mechine_translation_nj
+(/data1/conda_env/yrh_mtwxb) root@bit:/data1/yrh/trans/wxb_mechine_translation_nj/machine_translation# python test.py 
+/data1/yrh/trans/wxb_mechine_translation_nj/machine_translation
+
+```
 
 # IDE使用
 ## vscode
