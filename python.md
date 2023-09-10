@@ -53,10 +53,7 @@ print("Hello\vWorld!")  # 输出后垂直制表符
     debug的原理是什么？
     程序员想要知道程序运行的某个状态，使用解释器/编译器运行程序，并在指定的步骤暂停，获取想要的信息。python解释器有CPython、IPython、PyPy、Jython，vscode的python插件使用环境默认解释器，python --version, Python 3.8.16, python官方默认使用cpython解释器。c++编译器有gcc、mingw、clang等
 #### "purpose":["debug-in-terminal"]
-    界面右上角的debug按钮是简单调试，不读launch.json文件，所以在launch.json中的任何配置都不生效。左上角是配置调试，会读取launch.json配置文件。
-![image](https://github.com/YRH0/book/assets/74707759/4049235a-8c16-439b-b0c5-bdc226515bec)
-
-1. JustMyCode设置无用，launch增加"purpose":["debug-in-terminal"]
+    界面右上角的debug按钮是简单调试，不读launch.json文件，所以在launch.json中的任何配置都不生效，如果想要其读取launch.json配置，需要增加"purpose":["debug-in-terminal"]。
 ```python
 {
     "version": "0.2.0",
@@ -72,5 +69,7 @@ print("Hello\vWorld!")  # 输出后垂直制表符
         }
     ]
 }
-
 ```
+    左上角是配置调试，会读取launch.json配置文件。
+![image](https://github.com/YRH0/book/assets/74707759/4049235a-8c16-439b-b0c5-bdc226515bec)
+
