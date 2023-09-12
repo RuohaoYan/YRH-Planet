@@ -65,6 +65,56 @@ python在模块导入过程中，解释器会使用sys.path变量来确定模块
 
 ```
 
+## 异常处理
+```python
+try:
+    # 可能引发异常的代码
+    pass
+except ExceptionType:
+    # 处理异常
+    pass
+else:
+    # 在没有异常时执行的代码
+    pass
+finally:
+    # 无论异常是否发生都执行的代码
+    pass
+```
+### 意料之内的异常，可能是用户操作顺序不当或者其他原因，用于提醒用户正常操作
+```python
+try:
+    dividend = int(input("请输入被除数："))
+    divisor = int(input("请输入除数："))
+    result = dividend / divisor
+    print("结果：", result)
+except ZeroDivisionError:
+    print("除数不能为零！")
+except ValueError:
+    print("请输入有效的整数！")
+except FileNotFoundError:
+    print("文件不存在！")
+except IndexError:
+    print("索引超出范围！")
+except KeyError:
+    print("键不存在！")
+```
+### 捕获意料之外的异常并抛出
+```python
+def divide(dividend, divisor):
+    if divisor == 0:
+        raise ValueError("除数不能为零！")
+    result = dividend / divisor
+    return result
+
+try:
+    dividend = int(input("请输入被除数："))
+    divisor = int(input("请输入除数："))
+    result = divide(dividend, divisor)
+    print("结果：", result)
+except ValueError as e:
+    raise ValueError("发生了一个异常：" + str(e))
+```
+
 # IDE使用
 ## vscode
 ### debug
