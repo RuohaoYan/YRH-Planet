@@ -124,16 +124,33 @@ except ValueError as e:
     界面右上角的debug按钮是简单调试，不读launch.json文件，所以在launch.json中的任何配置都不生效，如果想要其读取launch.json配置，需要增加"purpose":["debug-in-terminal"]。
 ```python
 {
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: 当前文件",
+            "name": "Python: Current File",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
             "justMyCode": false,
-            "purpose":["debug-in-terminal"]
+            "purpose":["debug-in-terminal"],
+            "env": {
+                "RABBITMQ_DEFAULT_USER": "username",
+                "RABBITMQ_DEFAULT_PASS": "password",
+                "MODEL_LOAD_LIST": "[\"1\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\"]",
+                "NVIDIA_VISIBLE_DEVICES": "all",
+                "port": "10001",
+                "BROKER_CONN_URI": "amqp://username:password@10.1.10.2:5672",
+                "BACKEND_CONN_URI": "redis://10.1.10.2:6379/10",
+                "REDIS_STORE_CONN_URI": "redis://10.1.10.2:6379/0",
+                "CELERY_QUEUE_LIMIT": "100000",
+                "CUDA_VISIBLE_DEVICES": "1",
+                "PORT": "20002"
+            },
         }
     ]
 }
