@@ -11,7 +11,7 @@ A Survey on Evaluation Metrics for Machine Translation
 BLEU基于N-gram，只对词汇变化敏感，不能识别句子语义或语法的变化，因此，它们被反复证明与人工评估差距较大。1-gram的结果代表了文中有多少个词被单独翻译出来了，因此它反映的是这篇译文的忠实度；而当我们计算2-gram以上时，更多时候结果反映的是译文的流畅度，值越高文章的可读性就越好。
 https://www.cnblogs.com/by-dream/p/7679284.html
 
-BLEURT
+### BLEURT
 ![image](https://github.com/YRH0/book/assets/74707759/926713fd-bc32-4d41-be4c-69a779a7065e)
 Similarity refers to the human-annotated semantic similarity between sentence 1 and sentence 2. Scores are normalized.
 
