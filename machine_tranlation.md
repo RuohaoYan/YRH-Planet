@@ -6,6 +6,8 @@ A Survey on Evaluation Metrics for Machine Translation
 ![image](https://github.com/YRH0/book/assets/74707759/de612494-f5b9-49c9-b678-77ded3d5a2ac)
 
 ## 自动评价
+使用计算机评价
+### BLEU
 BLEU基于N-gram，只对词汇变化敏感，不能识别句子语义或语法的变化，因此，它们被反复证明与人工评估差距较大。
 
 BLEURT
