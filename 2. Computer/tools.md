@@ -22,3 +22,7 @@ put 1.htm
 批量上传
 mput *.htm　（回车）
 ```
+# tar
+```shell
+tar zcvf - file_name |split -b 4096m - file_name.tar.gz
+```
