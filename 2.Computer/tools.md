@@ -1,3 +1,77 @@
+# vscode
+## debug
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Fairseq Training",
+        "type": "python",
+        "request": "launch",
+        // "program": "fairseq-train",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "args": [
+          "/data1/2023/yrh/fairseq/data/bin",
+          "--arch",
+          "transformer",
+          "-s",
+          "ti",
+          "-t",
+          "zh",
+          "--encoder-learned-pos",
+          "--decoder-learned-pos",
+          "--reset-optimizer",
+          "--optimizer",
+          "adam",
+          "--adam-betas",
+          "(0.9, 0.98)",
+          "--clip-norm",
+          "0.0",
+          "--save-dir",
+          "/data1/2023/yrh/fairseq/checkpoints",
+          "--save-interval-updates",
+          "2000",
+          "--keep-interval-updates",
+          "5",
+          "--max-epoch",
+          "2600",
+          "--no-epoch-checkpoints",
+          "--max-tokens",
+          "10240",
+          "--update-freq",
+          "1",
+          "--skip-invalid-size-inputs-valid-test",
+          "--lr",
+          "2e-5",
+          "--lr-scheduler",
+          "inverse_sqrt",
+          "--dropout",
+          "0.3",
+          "--weight-decay",
+          "0.0000",
+          "--eval-bleu",
+          "--eval-bleu-args",
+          "{\"beam\": 5, \"max_len_a\": 1.2, \"max_len_b\": 10}",
+          "--seed",
+          "888",
+          "--empty-cache-freq",
+          "10",
+          "--criterion",
+          "label_smoothed_cross_entropy",
+          "--label-smoothing",
+          "0.1"
+        ],
+        "env": {
+          "CUDA_VISIBLE_DEVICES": "4,5,6,7"
+        },
+        // "cwd": "${workspaceFolder}",
+      }
+    ]
+}
+```
+
 # ftp
 ## 连接ftp服务器
 1、默认端口
