@@ -160,3 +160,8 @@ except ValueError as e:
 
 # 环境配置
 ## 迁移
+
+# 漂亮的代码
+```python
+d221 = dict([[value, key] for key, value in d221.items()])
+```
