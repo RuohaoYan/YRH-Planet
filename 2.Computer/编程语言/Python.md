@@ -163,5 +163,6 @@ except ValueError as e:
 
 # 漂亮的代码
 ```python
+# 颠倒词典的key与value
 d221 = dict([[value, key] for key, value in d221.items()])
 ```
