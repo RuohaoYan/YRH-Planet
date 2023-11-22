@@ -96,10 +96,17 @@ put 1.htm
 批量上传
 mput *.htm　（回车）
 ```
+## Xftp
+![image](https://github.com/YRH0/YRH-Planet/assets/74707759/5cc42497-9e6e-417c-9e2b-dd629db3cb43)
+![image](https://github.com/YRH0/YRH-Planet/assets/74707759/3c041066-a09a-4bbf-9f27-384dfab5c811)
+
+
+
 # tar
 ```shell
 tar zcvf - file_name |split -b 4096m - file_name.tar.gz
 ```
+ 
 
 # xshell
 ## 多级跳转
