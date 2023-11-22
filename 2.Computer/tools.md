@@ -100,3 +100,7 @@ mput *.htm　（回车）
 ```shell
 tar zcvf - file_name |split -b 4096m - file_name.tar.gz
 ```
+
+# xshell
+## 多级跳转
+![image](https://github.com/YRH0/YRH-Planet/assets/74707759/110a4af6-d18e-41ea-bce8-c7df37308e06)
