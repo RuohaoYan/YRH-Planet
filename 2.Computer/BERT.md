@@ -23,7 +23,28 @@ torch.Size([768])
 torch.Size([768])
 ```
 单个句子或段落：如果输入只包含一个句子或段落，那么通常会使用 bert.embeddings.token_type_embeddings.weight[0] 作为类型编码向量。这是因为在这种情况下，只有一个句子或段落需要被编码，而不需要区分不同的句子或段落。两个句子或段落：如果输入包含两个句子或段落，通常会使用 bert.embeddings.token_type_embeddings.weight[0] 和 bert.embeddings.token_type_embeddings.weight[1] 来区分它们。例如，在句子对分类任务中，输入序列可以是两个句子的组合，其中第一个句子使用 bert.embeddings.token_type_embeddings.weight[0] 进行编码，第二个句子使用 bert.embeddings.token_type_embeddings.weight[1] 进行编码。
-
+```python
+print(state_dict_pretrained['bert.encoder.layer.0.attention.self.query.weight'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.self.query.bias'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.self.key.weight'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.self.key.bias'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.self.value.weight'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.self.value.bias'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.output.dense.weight'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.output.dense.bias'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.output.LayerNorm.weight'].size())
+print(state_dict_pretrained['bert.encoder.layer.0.attention.output.LayerNorm.bias'].size())
+torch.Size([768, 768])
+torch.Size([768])
+torch.Size([768, 768])
+torch.Size([768])
+torch.Size([768, 768])
+torch.Size([768])
+torch.Size([768, 768])
+torch.Size([768])
+torch.Size([768])
+torch.Size([768])
+```
 
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/25a19691-f11e-46a6-9581-99caf328fed3)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/a74fd0be-e2e5-45e3-8b89-622db2d2e7cd)
