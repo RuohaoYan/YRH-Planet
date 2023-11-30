@@ -45,6 +45,13 @@ torch.Size([768])
 torch.Size([768])
 torch.Size([768])
 ```
+维度变化：例如输入3个字的句子,词典为30005，则维度为[3,30005] 'bert.embeddings.word_embeddings.weight'为[30005, 768],相乘得[3,768],
+输入为词向量矩阵X([30005, 768])，每个词为矩阵中的一行，经过与W进行矩阵乘法，首先生成Q、K和V。  q1 = X1 * WQ，q1为Q矩阵中的行向量，k1等与之类似。  
+![image](https://github.com/YRH0/YRH-Planet/assets/74707759/df00505a-f3bb-4ef4-863d-83665718a485)
+![image](https://github.com/YRH0/YRH-Planet/assets/74707759/fc0750ff-85a8-4599-bce3-5e800b097e9a)
+
+
+
 
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/25a19691-f11e-46a6-9581-99caf328fed3)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/a74fd0be-e2e5-45e3-8b89-622db2d2e7cd)
