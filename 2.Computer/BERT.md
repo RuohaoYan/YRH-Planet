@@ -47,19 +47,39 @@ torch.Size([768])
 维度变化：例如输入3个字的句子,词典为30005，则维度为[3,30005] 'bert.embeddings.word_embeddings.weight'为[30005, 768],相乘得[3,768],基于bert.embeddings.position_ids从bert.embeddings.position_embeddings.weight中选取向量相加，得到[3,768] 乘'bert.embeddings.LayerNorm.weight'加'bert.embeddings.LayerNorm.bias'得到[3,768]
 求 Q [3,768]*[768, 768] = [3,768] K [3,768]*[768, 768] = [3,768] Q*KT = [3,3] * V[768, 768] = [3,768] 乘'bert.encoder.layer.0.attention.output.dense.weight[768, 768]'线性层 = [3,768]
 
- 
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/df00505a-f3bb-4ef4-863d-83665718a485)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/fc0750ff-85a8-4599-bce3-5e800b097e9a)
-
-
-
-
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/25a19691-f11e-46a6-9581-99caf328fed3)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/a74fd0be-e2e5-45e3-8b89-622db2d2e7cd)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/043f1ddd-9444-4e4d-b8eb-c7bc914a5cc0)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/cf51b12b-9e4d-43ea-bf19-38a6c5acca07)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/3a960401-fe97-41f1-9da8-da714c370830)
 
+```python
+print(state_dict_pretrained['bert.pooler.dense.weight'].size())
+print(state_dict_pretrained['bert.pooler.dense.bias'].size())
+print(state_dict_pretrained['cls.predictions.bias'].size())
+print(state_dict_pretrained['cls.predictions.transform.dense.weight'].size())
+print(state_dict_pretrained['cls.predictions.transform.dense.bias'].size())
+print(state_dict_pretrained['cls.predictions.transform.LayerNorm.weight'].size())
+print(state_dict_pretrained['cls.predictions.transform.LayerNorm.bias'].size())
+print(state_dict_pretrained['cls.predictions.decoder.weight'].size())
+print(state_dict_pretrained['cls.predictions.decoder.bias'].size())
+torch.Size([768, 768])
+torch.Size([768])
+torch.Size([30005])
+torch.Size([768, 768])
+torch.Size([768])
+torch.Size([768])
+torch.Size([768])
+torch.Size([30005, 768])
+torch.Size([30005])
 
+
+print(state_dict_pretrained['cls.seq_relationship.weight'].size())
+print(state_dict_pretrained['cls.seq_relationship.bias'].size())
+torch.Size([2, 768])
+torch.Size([2])
+```
 
 
