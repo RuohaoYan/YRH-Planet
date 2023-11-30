@@ -45,9 +45,9 @@ torch.Size([768])
 
 单个句子或段落：如果输入只包含一个句子或段落，那么通常会使用 bert.embeddings.token_type_embeddings.weight[0] 作为类型编码向量。这是因为在这种情况下，只有一个句子或段落需要被编码，而不需要区分不同的句子或段落。两个句子或段落：如果输入包含两个句子或段落，通常会使用 bert.embeddings.token_type_embeddings.weight[0] 和 bert.embeddings.token_type_embeddings.weight[1] 来区分它们。例如，在句子对分类任务中，输入序列可以是两个句子的组合，其中第一个句子使用 bert.embeddings.token_type_embeddings.weight[0] 进行编码，第二个句子使用 bert.embeddings.token_type_embeddings.weight[1] 进行编码。
 维度变化：例如输入3个字的句子,词典为30005，则维度为[3,30005] 'bert.embeddings.word_embeddings.weight'为[30005, 768],相乘得[3,768],基于bert.embeddings.position_ids从bert.embeddings.position_embeddings.weight中选取向量相加，得到[3,768] 乘'bert.embeddings.LayerNorm.weight'加'bert.embeddings.LayerNorm.bias'得到[3,768]
-求 Q [3,768]*[768, 768] = [3,768] K [3,768]*[768, 768] = [3,768] Q*KT = [3,3] * V[768, 768] = [3,768]
+求 Q [3,768]*[768, 768] = [3,768] K [3,768]*[768, 768] = [3,768] Q*KT = [3,3] * V[768, 768] = [3,768] 乘'bert.encoder.layer.0.attention.output.dense.weight[768, 768]'线性层 = [3,768]
 
-输入为词向量矩阵X([30005, 768])，每个词为矩阵中的一行，经过与W进行矩阵乘法，首先生成Q、K和V。  q1 = X1 * WQ，q1为Q矩阵中的行向量，k1等与之类似。  
+ 
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/df00505a-f3bb-4ef4-863d-83665718a485)
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/fc0750ff-85a8-4599-bce3-5e800b097e9a)
 
