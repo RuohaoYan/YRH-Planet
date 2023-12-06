@@ -3,6 +3,7 @@
 当年Linus创建了开源的Linux，从此，Linux系统不断发展，现在已经成为最大的服务器系统软件了。(请不要傻傻分不清Linus和Linux但是随着Linux的不断壮大，就需要各种版本控制了，起初Linus带着他的小弟们使用的是BitKeeper(商业版本控制系统),之后呢由于某种原因BitKeeper的公司不让他们使用了，于是Linus自己花了两周时间写出了Git并且开源了。Linus Torvalds说 "a rotten person", he said. "I'm an egotistical bastard, so I name all my projects after myself. First Linux, now git" 没错，git英语俚语意思是蠢货，自以为是且好辩的人。
 
 ## github
+git和github：很多人说git是版本控制器，github是仓库，其实现在的github具有版本控制功能，我觉得GitHub是一个基于Git的代码托管平台，它使用Git作为底层的版本控制系统，已经包含了git。
 **本地仓库区**：指存储在本地计算机上的Git版本库，包含了完整的项目历史记录和元数据信息，可以在本地仓库中进行提交、分支操作和版本控制。
 {**工作区（Working Directory）**：包含实际的项目文件，在电脑上进行编辑和修改。
 **暂存区（Staging Area/Index）**：暂存区相当于一个缓冲区，用于暂时存放将要提交的更改，在工作区中修改文件后，可以使用git add命令将更改添加到暂存区。
