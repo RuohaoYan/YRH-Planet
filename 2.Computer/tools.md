@@ -115,12 +115,12 @@ tar zcvf - file_name |split -b 4096m - file_name.tar.gz
 ![image](https://github.com/YRH0/YRH-Planet/assets/74707759/110a4af6-d18e-41ea-bce8-c7df37308e06)
 
 
-
 # git
 当年Linus创建了开源的Linux，从此，Linux系统不断发展，现在已经成为最大的服务器系统软件了。(请不要傻傻分不清Linus和Linux但是随着Linux的不断壮大，就需要各种版本控制了，起初Linus带着他的小弟们使用的是BitKeeper(商业版本控制系统),之后呢由于某种原因BitKeeper的公司不让他们使用了，于是Linus自己花了两周时间写出了Git并且开源了。Linus Torvalds说 "a rotten person", he said. "I'm an egotistical bastard, so I name all my projects after myself. First Linux, now git" 没错，git英语俚语意思是蠢货，自以为是且好辩的人。
 
-## github
-git和github：很多人说git是版本控制器，github是仓库，其实现在的github具有版本控制功能，我觉得GitHub是一个基于Git的代码托管平台，它使用Git作为底层的版本控制系统，已经包含了git。
+
+## Github
+Git和Github：很多人说git是版本控制器，github是仓库，其实现在的github具有版本控制功能，我觉得GitHub是一个基于Git的代码托管平台，它使用Git作为底层的版本控制系统，已经包含了git。
 **本地仓库区**：指存储在本地计算机上的Git版本库，包含了完整的项目历史记录和元数据信息，可以在本地仓库中进行提交、分支操作和版本控制。
 {**工作区（Working Directory）**：包含实际的项目文件，在电脑上进行编辑和修改。
 **暂存区（Staging Area/Index）**：暂存区相当于一个缓冲区，用于暂时存放将要提交的更改，在工作区中修改文件后，可以使用git add命令将更改添加到暂存区。
@@ -128,35 +128,44 @@ git和github：很多人说git是版本控制器，github是仓库，其实现�
 电脑上的工作目录
 **远程仓库**：云端
 
-### ssh配置
+
+### 配置ssh 打通机器与Github
 1、检查密钥是否连通，否进入2、，
-```python
-ssh -T git@github.com 
+```shell
+Host YRH0  # 域名的代称
+    HostName github.com
+    User git
+    PreferredAuthentications publickey   # 指定首选的身份验证方法。在这种情况下，设置为 "publickey"，表示将使用SSH公钥身份验证。
+    IdentityFile ~/.ssh/yrhGit
+    ServerAliveInterval 30
 ```
+配置~/.ssh/config 文件，目的是使计算机在运行ssh服务连接指定域名时知道应该使用哪个密钥
+
+```python
+ssh -T Host # Host = user@HostName
+```
+
 2、生成密钥
+```shell
+ssh-keygen -f ~/.ssh/id_rsa_xj_3090_2 -t rsa -C 邮箱
+```
 -f 参数表示指定密钥对生成位置与名称
 密钥对通常放在 ~/.ssh 目录下
 回车即可创建密钥对，需要输入密码如果不需要为密钥对进行加密，那么可以一路回车。
 **邮箱与git邮箱要一致，github会验证邮箱**
-```shell
-ssh-keygen -f ~/.ssh/id_rsa_xj_3090_2 -t rsa -C 邮箱
-```
+
 3、在github中加入公钥（.pub文件）
 点击图像，选择setting，选择SSH and GPG keys，增加new ssh keys
 ```shell
 cat .pub # 剪切公钥的内容并复制粘贴到new ssh keys中
 ```
-4、配置ssh config文件，目的是使计算机在运行ssh服务连接github的时候知道应该使用哪个密钥
+
+4、
 ```python
 cd ~/.ssh # 进入ssh目录
 vi config
 ```
-```shell
-Host github.com
-HostName github.com
-PreferredAuthentications publickey # 指定首选的身份验证方法。在这种情况下，设置为 "publickey"，表示将使用SSH公钥身份验证。
-IdentityFile ~/.ssh/id_rsa_git_bit_3090_4.pub # **如果出现密钥权限问题 去掉这一行**
-```
+
 5、重复1、，判断是否连接成功
 
 ### 初始化git操作
