@@ -1,5 +1,5 @@
-# 云存储
-## git
+
+# git
 当年Linus创建了开源的Linux，从此，Linux系统不断发展，现在已经成为最大的服务器系统软件了。(请不要傻傻分不清Linus和Linux但是随着Linux的不断壮大，就需要各种版本控制了，起初Linus带着他的小弟们使用的是BitKeeper(商业版本控制系统),之后呢由于某种原因BitKeeper的公司不让他们使用了，于是Linus自己花了两周时间写出了Git并且开源了。Linus Torvalds说 "a rotten person", he said. "I'm an egotistical bastard, so I name all my projects after myself. First Linux, now git" 没错，git英语俚语意思是蠢货，自以为是且好辩的人。
 
 ## github
