@@ -168,6 +168,11 @@ vi config
 
 5、重复1、，判断是否连接成功
 
+6、下载项目
+```shell
+git clone YRH0:YRH0/k-translation.git
+```
+
 ### 初始化git操作
 ```powershell
 git clone https://github.com/xxxxx
