@@ -173,6 +173,9 @@ vi config
 git clone YRH0:YRH0/k-translation.git
 ```
 
+7、git push YRH0:YRH0/tools_yrh.git
+
+
 ### 初始化git操作
 ```powershell
 git clone https://github.com/xxxxx
