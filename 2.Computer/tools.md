@@ -160,7 +160,7 @@ ssh-keygen -f ~/.ssh/id_rsa_xj_3090_2 -t rsa -C 邮箱
 cat .pub # 剪切公钥的内容并复制粘贴到new ssh keys中
 ```
 
-4、
+4、编辑config
 ```python
 cd ~/.ssh # 进入ssh目录
 vi config
