@@ -173,7 +173,11 @@ vi config
 git clone YRH0:YRH0/k-translation.git
 ```
 
-7、git push YRH0:YRH0/tools_yrh.git
+7、上传项目  
+```shell
+git push YRH0:YRH0/tools_yrh.git
+```
+
 
 
 ### 初始化git操作
