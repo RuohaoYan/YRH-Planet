@@ -178,8 +178,6 @@ git clone YRH0:YRH0/k-translation.git
 git push YRH0:YRH0/tools_yrh.git
 ```
 
-
-
 ### 初始化git操作
 ```powershell
 git clone https://github.com/xxxxx
@@ -224,6 +222,11 @@ git fetch
 # 更新代码
 git merge
 # 合并
+```
+
+通过wget获取远程压缩代码
+```powershll
+wget https://codeload.github.com/YRH0/nlpir-protect/zip/refs/heads/main
 ```
 git pull 与 git fetch + get merge 的区别 :
 		git分为本地仓库和远程仓库，流程 写完代码 -> commit本地仓库（生成本地仓的commit ID，代表当前提交代码的版本号）-> push到远程仓库（记录这个版本号）。本地的git文件夹中对应存储了 git本地仓库master分支的commit ID、跟踪的远程分支orign/master的commit ID（.git/refs/head/[本地分支]、.git/refs/head/[本地分支]）。假设我们本地仓库的 master 分支上 commit ID =1 ，orign/mastter中的commit ID =1 ，这时候远程仓库有人更新了github ogirn库中master分支上的代码，新的代码版本号commit ID =2 ,那么在github上 orign/master的commitID=2，然后我们要更新代码。
