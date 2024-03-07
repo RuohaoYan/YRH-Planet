@@ -1,6 +1,6 @@
 # 创建环境
 ```shell
-conda create -p /data/conda_env/yrh_falcon python=3.11 python==3.11
+conda create -p /data/conda_env/yrh_falcon python=3.11
 ```
 
 # 移除环境
