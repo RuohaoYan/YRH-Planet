@@ -142,7 +142,7 @@ Host YRH0  # 域名的代称
 配置~/.ssh/config 文件，目的是使计算机在运行ssh服务连接指定域名时知道应该使用哪个密钥
 
 ```python
-ssh -T Host # Host = user@HostName
+ssh -T Host # Host = user@HostName   203.208.39.99githubip地址
 ssh -vT Host # -v表示verbose，会打出详细日志。
 ```
 
