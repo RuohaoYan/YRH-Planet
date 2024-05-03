@@ -143,6 +143,7 @@ Host YRH0  # 域名的代称
 
 ```python
 ssh -T Host # Host = user@HostName
+ssh -vT Host # -v表示verbose，会打出详细日志。
 ```
 
 2、生成密钥
